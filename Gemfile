@@ -38,3 +38,14 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Using Foundation 5 Framework
+gem 'foundation-rails'
+
+# Using Devise for user authentication
+gem 'devise'
+
+# Using Redis for key-value store
+gem 'redis-rails'
+
+# Using Braintree for payment processing
+gem 'braintree-rails'
