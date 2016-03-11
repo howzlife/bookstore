@@ -14,7 +14,7 @@
             </div>
             <p class="left price label book-label radius"><%= number_to_currency(book.strike_price, :unit => "$") %></p>
             <%= link_to book.indigo, class: "right" do %>
-            <%= image_tag "indigo.png" %> 
+            <%= image_tag "indigo.png", :class => "indigo" %> 
            <% end %>
           </div>
         </div>

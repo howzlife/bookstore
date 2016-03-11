@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
     root 'books#index'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :books, only: [:show, :index]
+
+  resource :cart, only: [:show] do
+    put 'add/:id', to: 'carts#add', as: :add_to
+    put 'remove/:id', to: 'carts#remove', as: :remove_from
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

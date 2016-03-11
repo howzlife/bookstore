@@ -49,3 +49,7 @@ gem 'redis-rails'
 
 # Using Braintree for payment processing
 gem 'braintree-rails'
+
+# Using Redis for shopping cart
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.4.5'

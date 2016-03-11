@@ -7,7 +7,9 @@
     <%= @book.title %>
     (<%= @book.release_year %>)
     <%=link_to @book.indigo do%>
-      <%=image_tag "indigo.png"%>
+      <div class="indigo">
+        <%=image_tag "indigo.png"%>
+      </div>
     <%end%>
   </h3>
   <p class="label book-label radius mb1">$ <%= @book.strike_price %></p>
