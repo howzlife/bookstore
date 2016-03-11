@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+    root 'books#index'
+
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :books, only: [:show, :index]
 
-  root 'books#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
