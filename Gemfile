@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # Using Foundation 5 Framework
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.3.3'
 
 # Using Devise for user authentication
 gem 'devise'
