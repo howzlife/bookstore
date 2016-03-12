@@ -9,26 +9,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    respond_with(@book)
-  end
-
-  def create
-    @book = Book.new(book_params)
-    @book.save
-    respond_with(@book)
-  end
-
-  def update
-    @book.update(book_params)
-    respond_with(@book)
-  end
-
-  def destroy
-    @book.destroy
-    respond_with(@book)
+    @book = Book.find(params[:id])
+    @cart_action = @book.cart_action current_user.try :id    
   end
 
   private
+
     def set_book
       @book = Book.find(params[:id])
     end
