@@ -1,7 +1,7 @@
 <h4 class="column">Featured Books</h4>
 <div class="column">
   <ul class="books-grid no-bullet row">
-    <% @books.each do |book| %>
+    <% for book in @books %>
       <li class="large-3 medium-4 small-12 column">
         <div class="book-card padly">
           <%= link_to book, class: "image" do %>

@@ -35,12 +35,14 @@
       <ul class="left">
         <li class="has-form">
           <div class="row collapse">
-            <div class="large-8 small-9 columns">
-              <input type="text" class="radius-ls expand" placeholder="Find Book">
-            </div>
-            <div class="large-4 small-3 columns">
-              <a href="#" class=" radius-rs button">Search</a>
-            </div>
+            <%= form_tag books_path, :method => 'get' do %>
+                <div class="large-8 small-9 columns">
+                  <%= text_field_tag :search, (params[:search] != "") ? params[:search] : "Find Book", :class => "radius-ls expand" %>
+                </div>
+                <div class="large-4 small-3 columns">
+                  <%= submit_tag "Search", class: "radius-rs button", name: nil %>
+                </div>
+            <% end %>
           </div>
         </li>
       </ul>

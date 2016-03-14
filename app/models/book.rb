@@ -1,6 +1,14 @@
 class Book < ActiveRecord::Base
 	has_many :purchases
 	has_many :buyers, through: :purchases
+
+	def self.search(search)
+		if search
+			where('title LIKE ?', "%#{search}%")
+		else
+			all
+		end
+	end
 	
 	def image
 		self.image_url
