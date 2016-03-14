@@ -6,11 +6,12 @@
 }
 // Body background
 body {
-  background-image: url(body_bg.png);
+  background-image: url(body_bg2.png);
   background-position: center;
   color: #fff;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
+  background-size: cover;
 }
 // Logo
 .title-area{

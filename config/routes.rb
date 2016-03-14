@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'transactions/new'
+
   get 'carts/show'
 
     root 'books#index'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :books, only: [:show, :index]
+  resources :transactions, only: [:new, :create]
 
   resource :cart, only: [:show] do
     put 'add/:id', to: 'carts#add', as: :add_to

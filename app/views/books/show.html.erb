@@ -9,7 +9,7 @@
       <%=image_tag "indigo.png"%>
     <%end%>
   </h3>
-  <p class="label book-label radius mb1"><%= number_to_currency(@book.strike_price, :unit => "$") %></p>
+  <p class="label book-label radius mb1"> <%= (current_user && current_user.purchase?(@book)) ? "Purchased" : "$#{@book.strike_price}" %></p>
 
  <p><%= @book.title %></p> 
  

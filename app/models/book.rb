@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
+	has_many :purchases
+	has_many :buyers, through: :purchases
+	
 	def image
 		self.image_url
 	end
