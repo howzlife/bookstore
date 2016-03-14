@@ -43,6 +43,15 @@
                   <%= submit_tag "Search", class: "radius-rs button", name: nil %>
                 </div>
             <% end %>
+              <li class="has-dropdown">
+                <a href="#">Categories</a>
+                <ul class="dropdown">
+                  <li><a href="/books/filter/romance" name="romance">Romance</a></li>
+                  <li><a href="/books/filter/fiction" name="fiction">Fiction</a></li>
+                  <li><a href="/books/filter/health" name="health">Health</a></li>
+                  <li><a href="/books/filter/biography" name="biography">Biography</a></li>
+                </ul>
+              </li>
           </div>
         </li>
       </ul>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'carts/show'
 
-    root 'books#index'
+  get "books/filter/:search", to: "books#index"
+
+  root 'books#index'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :books, only: [:show, :index]

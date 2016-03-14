@@ -4,7 +4,7 @@ class Book < ActiveRecord::Base
 
 	def self.search(search)
 		if search
-			where('title LIKE ?', "%#{search}%")
+			where('title LIKE ? OR category like ?', "%#{search}%", "%#{search}%")
 		else
 			all
 		end

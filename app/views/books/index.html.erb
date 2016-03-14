@@ -10,7 +10,7 @@
           <div class="book-info ell glassy-bg padmy padlx">
             <div class="title">
               <h6><%= truncate(book.title, :length => 22, :omission => '...') %> <br>
-                <span>(<%= book.release_year %>)</span></h6>
+                <span>(<%= book.release_year %>) - <%= book.category %></span></h6>
             </div>
             <p class="left price label book-label radius"><%= number_to_currency(book.strike_price, :unit => "$") %></p>
             <%= link_to book.indigo, class: "right" do %>
