@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
 	def purchase?(book)
 	  books.include?(book)
 	end
+
+	def has_payment_info?
+  		braintree_customer_id
+	end
 end

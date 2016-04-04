@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   respond_to :html
 
   def index
-    @books = Book.search(params[:search])
+    @books = Book.search(params[:search]).page
     respond_with(@books)
   end
 

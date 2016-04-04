@@ -11,7 +11,7 @@
   </h3>
   <p class="label book-label radius mb1"> <%= (current_user && current_user.purchase?(@book)) ? "Purchased" : "$#{@book.strike_price}" %></p>
 
- <p><%= @book.title %></p> 
+ <p><%= @book.description %></p> 
  
   <%if signed_in?%>
     <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@book), removeUrl: remove_from_cart_path(@book)} do%>

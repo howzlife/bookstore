@@ -1,4 +1,4 @@
-<h4 class="column">Featured Books</h4>
+<h3 class="column">Featured Books</h3>
 <div class="column">
   <ul class="books-grid no-bullet row">
     <% for book in @books %>
@@ -10,7 +10,7 @@
           <div class="book-info ell glassy-bg padmy padlx">
             <div class="title">
               <h6><%= truncate(book.title, :length => 22, :omission => '...') %> <br>
-                <span>(<%= book.release_year %>) - <%= book.category %></span></h6>
+                <span>(<%= book.release_year %>)</span><span class="#{book.category}"><br><%= book.category.capitalize %></span></h6>
             </div>
             <p class="left price label book-label radius"><%= number_to_currency(book.strike_price, :unit => "$") %></p>
             <%= link_to book.indigo, class: "right" do %>
@@ -20,6 +20,57 @@
         </div>
       </li>
     <% end %>
+    <%= paginate @books %>
+  </ul>
+</div>
+<h3 class="column">Best Sellers</h3>
+<div class="column">
+  <ul class="books-grid no-bullet row">
+    <% for book in @books.offset(8) %>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="book-card padly">
+          <%= link_to book, class: "image" do %>
+            <%= image_tag book.image %>
+          <% end %>
+          <div class="book-info ell glassy-bg padmy padlx">
+            <div class="title">
+              <h6><%= truncate(book.title, :length => 22, :omission => '...') %> <br>
+                <span>(<%= book.release_year %>)</span><span class="#{book.category}"><br><%= book.category.capitalize %></span></h6>
+            </div>
+            <p class="left price label book-label radius"><%= number_to_currency(book.strike_price, :unit => "$") %></p>
+            <%= link_to book.indigo, class: "right" do %>
+            <%= image_tag "indigo.png", :class => "indigo" %> 
+           <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    <%= paginate @books %>
+  </ul>
+</div>
+<h3 class="column">Recommended</h3>
+<div class="column">
+  <ul class="books-grid no-bullet row">
+    <% for book in @books.offset(16)%>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="book-card padly">
+          <%= link_to book, class: "image" do %>
+            <%= image_tag book.image %>
+          <% end %>
+          <div class="book-info ell glassy-bg padmy padlx">
+            <div class="title">
+              <h6><%= truncate(book.title, :length => 22, :omission => '...') %> <br>
+                <span>(<%= book.release_year %>)</span><span class="#{book.category}"><br><%= book.category.capitalize %></span></h6>
+            </div>
+            <p class="left price label book-label radius"><%= number_to_currency(book.strike_price, :unit => "$") %></p>
+            <%= link_to book.indigo, class: "right" do %>
+            <%= image_tag "indigo.png", :class => "indigo" %> 
+           <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    <%= paginate @books %>
   </ul>
 </div>
 

@@ -13,6 +13,8 @@
     </div>
     <div class="column large-7 glassy-bg text-center" data-equalizer-watch>
         <p class="scale ptm"> <%= book.title %> </p>
+      </br>
+        <div>Quantity: <%= number_field_tag  'quantity', '1', min: 1, :input_html => {:maxlength => 15, :size => 40} %></div>
     </div>
     <div class="column large-3 primary-bg text-center radius-r1" data-equalizer-watch>
       <%=link_to "" , data: {targetUrl: remove_from_cart_path(book)} do%>
